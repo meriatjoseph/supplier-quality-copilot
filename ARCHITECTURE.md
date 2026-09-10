@@ -131,7 +131,13 @@ human approval before anything is marked `executed`.
 - **Graceful degradation:** `dispatch()` never raises — on persistent
   failure it returns a synthetic `AgentResponse(status=unavailable)`, which
   the Coordinator surfaces as an explicit evidence gap rather than
-  crashing or hanging.
+  crashing or hanging. Verified manually: with `docker compose stop
+  logistics-agent`, `POST /submit_complaint` still returns `200` (~18s,
+  the two-attempt/5s-timeout dispatch penalty for the unreachable agent)
+  with `agent_health["logistics-agent"].up == false` and
+  `agent_responses["logistics-agent"].status == "unavailable"`, and the
+  bundle still includes a consolidated result and a draft 8D built from
+  the three agents that did respond.
 - **Auth:** static `X-API-Key` header, one shared `verify_api_key` FastAPI
   dependency (`shared/auth.py`) reused by every service.
 - **Audit log:** append-only SQLite table on a shared Docker volume

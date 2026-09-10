@@ -137,6 +137,13 @@ else evaluates in-process against the same retrieval code).
 
 ## Known limitations
 
+- Manually verified: an unavailable agent doesn't crash or hang the
+  workflow. With `docker compose stop logistics-agent`,
+  `POST /submit_complaint` still returns `200` — `agent_health` reports
+  `logistics-agent.up == false`, its `agent_responses` entry carries
+  `status: "unavailable"`, and the coordinator still returns a
+  consolidated result and draft 8D from the agents that did respond. See
+  `ARCHITECTURE.md`'s "Graceful degradation" note for the exact behavior.
 - Retrieval relevance scoring is a hand-tuned heuristic (L2-distance-based),
   not a calibrated probability. Real embedding providers (OpenAI/Google) and
   the offline mock embedder produce relevance scores on different scales, so
