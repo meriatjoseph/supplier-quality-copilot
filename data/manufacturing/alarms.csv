@@ -1,0 +1,30 @@
+alarm_time,machine_id,line,alarm_code,description,value
+2025-04-22 15:00:00,PRESS-4B,Line 2,E-STOP,"Routine transient alarm, auto-cleared",
+2025-04-28 01:00:00,EOL-TESTER-1,Line 1,E-STOP,"Routine transient alarm, auto-cleared",
+2025-04-29 20:00:00,FLASH-STN-1,Line 2,AIR_PRESSURE_LOW,"Routine transient alarm, auto-cleared",
+2025-05-08 13:00:00,EOL-TESTER-1,Line 1,E-STOP,"Routine transient alarm, auto-cleared",
+2025-05-10 21:18:04,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,39.4
+2025-05-11 00:10:55,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,30.0
+2025-05-11 03:05:46,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,39.2
+2025-05-11 22:48:41,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,34.5
+2025-05-12 01:22:32,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,41.5
+2025-05-12 04:39:23,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,38.2
+2025-05-12 07:37:13,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,40.8
+2025-05-12 10:24:04,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,40.3
+2025-05-12 18:43:36,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,39.0
+2025-05-12 20:00:00,PRESS-4A,Line 1,E-STOP,"Routine transient alarm, auto-cleared",
+2025-05-12 21:14:27,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,43.7
+2025-05-13 08:55:50,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,32.4
+2025-05-13 14:19:32,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,42.3
+2025-05-14 04:58:46,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,34.3
+2025-05-15 00:34:41,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,40.4
+2025-05-15 12:05:04,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,37.4
+2025-05-15 14:36:55,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,36.3
+2025-05-15 20:09:36,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,43.7
+2025-05-16 04:32:09,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,38.4
+2025-05-16 15:56:32,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,38.2
+2025-05-16 18:48:23,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,43.0
+2025-05-16 21:48:13,PRESS-4B,Line 2,FORCE_LOW_4B,Connector insertion force below 45N lower control limit,37.0
+2025-05-16 22:00:00,FLASH-STN-1,Line 2,SENSOR_COMM_RETRY,"Routine transient alarm, auto-cleared",
+2025-05-17 21:00:00,PRESS-4A,Line 1,AIR_PRESSURE_LOW,"Routine transient alarm, auto-cleared",
+2025-05-19 01:00:00,FLASH-STN-1,Line 2,AIR_PRESSURE_LOW,"Routine transient alarm, auto-cleared",

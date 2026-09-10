@@ -1,0 +1,127 @@
+services:
+  quality-rag-agent:
+    build:
+      context: .
+      dockerfile: quality-rag-agent/Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      SHARED_API_KEY: ${SHARED_API_KEY:-dev-shared-secret-change-me}
+      AUDIT_DB_PATH: /app/audit_data/audit.db
+      LLM_PROVIDER: ${LLM_PROVIDER:-google}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    volumes:
+      - audit_data:/app/audit_data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  traceability-agent:
+    build:
+      context: .
+      dockerfile: traceability-agent/Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      SHARED_API_KEY: ${SHARED_API_KEY:-dev-shared-secret-change-me}
+      AUDIT_DB_PATH: /app/audit_data/audit.db
+    volumes:
+      - audit_data:/app/audit_data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  process-maintenance-agent:
+    build:
+      context: .
+      dockerfile: process-maintenance-agent/Dockerfile
+    ports:
+      - "8003:8003"
+    environment:
+      SHARED_API_KEY: ${SHARED_API_KEY:-dev-shared-secret-change-me}
+      AUDIT_DB_PATH: /app/audit_data/audit.db
+    volumes:
+      - audit_data:/app/audit_data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8003/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  logistics-agent:
+    build:
+      context: .
+      dockerfile: logistics-agent/Dockerfile
+    ports:
+      - "8004:8004"
+    environment:
+      SHARED_API_KEY: ${SHARED_API_KEY:-dev-shared-secret-change-me}
+      AUDIT_DB_PATH: /app/audit_data/audit.db
+    volumes:
+      - audit_data:/app/audit_data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8004/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  coordinator-agent:
+    build:
+      context: .
+      dockerfile: coordinator-agent/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      SHARED_API_KEY: ${SHARED_API_KEY:-dev-shared-secret-change-me}
+      AUDIT_DB_PATH: /app/audit_data/audit.db
+      LLM_PROVIDER: ${LLM_PROVIDER:-google}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      RAG_AGENT_URL: http://quality-rag-agent:8001
+      TRACEABILITY_AGENT_URL: http://traceability-agent:8002
+      PROCESS_MAINTENANCE_AGENT_URL: http://process-maintenance-agent:8003
+      LOGISTICS_AGENT_URL: http://logistics-agent:8004
+    volumes:
+      - audit_data:/app/audit_data
+    depends_on:
+      quality-rag-agent:
+        condition: service_healthy
+      traceability-agent:
+        condition: service_healthy
+      process-maintenance-agent:
+        condition: service_healthy
+      logistics-agent:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      SHARED_API_KEY: ${SHARED_API_KEY:-dev-shared-secret-change-me}
+      COORDINATOR_URL: http://coordinator-agent:8000
+    depends_on:
+      coordinator-agent:
+        condition: service_healthy
+
+volumes:
+  audit_data:

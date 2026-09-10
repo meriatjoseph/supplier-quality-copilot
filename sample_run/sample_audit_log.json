@@ -1,0 +1,723 @@
+[
+    {
+        "id": 243,
+        "timestamp": "2026-09-09T17:02:20Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": "8d_update",
+        "event_type": "action_status_update",
+        "status": "executed",
+        "detail": {
+            "ref_id": "ACT-7FDBA68F"
+        }
+    },
+    {
+        "id": 242,
+        "timestamp": "2026-09-09T17:02:20Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "frontend",
+        "recipient": "coordinator-agent",
+        "action": "8d_update",
+        "event_type": "approval_decision",
+        "status": "approved",
+        "detail": {
+            "ref_id": "ACT-7FDBA68F",
+            "approved_by": "quality-manager",
+            "modification_note": null
+        }
+    },
+    {
+        "id": 241,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": "oem_notification",
+        "event_type": "action_status_update",
+        "status": "executed",
+        "detail": {
+            "ref_id": "ACT-F321F389"
+        }
+    },
+    {
+        "id": 240,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "frontend",
+        "recipient": "coordinator-agent",
+        "action": "oem_notification",
+        "event_type": "approval_decision",
+        "status": "approved",
+        "detail": {
+            "ref_id": "ACT-F321F389",
+            "approved_by": "quality-manager",
+            "modification_note": null
+        }
+    },
+    {
+        "id": 239,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": "shipment_block",
+        "event_type": "action_status_update",
+        "status": "rejected",
+        "detail": {
+            "ref_id": "ACT-6FD5CDE2"
+        }
+    },
+    {
+        "id": 238,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "execute_containment_action",
+        "event_type": "execution_response",
+        "status": "rejected",
+        "detail": {
+            "result": {
+                "action_id": "ACT-6FD5CDE2",
+                "status": "rejected",
+                "detail": "Human approval was not granted."
+            },
+            "error": null
+        }
+    },
+    {
+        "id": 237,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-5B9D2272",
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "execute_containment_action",
+        "event_type": "response_sent",
+        "status": "rejected",
+        "detail": {}
+    },
+    {
+        "id": 236,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-5B9D2272",
+        "sender": "coordinator-agent",
+        "recipient": "logistics-agent",
+        "action": "execute_containment_action",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 235,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "frontend",
+        "recipient": "coordinator-agent",
+        "action": "shipment_block",
+        "event_type": "approval_decision",
+        "status": "rejected",
+        "detail": {
+            "ref_id": "ACT-6FD5CDE2",
+            "approved_by": "quality-manager",
+            "modification_note": null
+        }
+    },
+    {
+        "id": 234,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": "work_order",
+        "event_type": "action_status_update",
+        "status": "executed",
+        "detail": {
+            "ref_id": "WO-BA454F6E"
+        }
+    },
+    {
+        "id": 233,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "process-maintenance-agent",
+        "recipient": "coordinator-agent",
+        "action": "execute_work_order",
+        "event_type": "execution_response",
+        "status": "executed",
+        "detail": {
+            "result": {
+                "work_order_id": "WO-BA454F6E",
+                "status": "executed",
+                "work_order": {
+                    "work_order_id": "WO-BA454F6E",
+                    "work_order_type": "Corrective Maintenance",
+                    "machine_id": "PRESS-4B",
+                    "description": "Recalibrate and inspect PRESS-4B connector press force cell/tooling. 21 of 25 units in the investigation window read outside the 45.0-65.0N control-plan spec.",
+                    "priority": "High",
+                    "status": "executed"
+                }
+            },
+            "error": null
+        }
+    },
+    {
+        "id": 232,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-89875B7C",
+        "sender": "process-maintenance-agent",
+        "recipient": "coordinator-agent",
+        "action": "execute_work_order",
+        "event_type": "response_sent",
+        "status": "executed",
+        "detail": {}
+    },
+    {
+        "id": 231,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-89875B7C",
+        "sender": "coordinator-agent",
+        "recipient": "process-maintenance-agent",
+        "action": "execute_work_order",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 230,
+        "timestamp": "2026-09-09T17:02:19Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "frontend",
+        "recipient": "coordinator-agent",
+        "action": "work_order",
+        "event_type": "approval_decision",
+        "status": "approved",
+        "detail": {
+            "ref_id": "WO-BA454F6E",
+            "approved_by": "quality-manager",
+            "modification_note": null
+        }
+    },
+    {
+        "id": 187,
+        "timestamp": "2026-09-09T17:01:01Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": "release_material",
+        "event_type": "action_status_update",
+        "status": "released",
+        "detail": {
+            "ref_id": "ACT-7B5F6D13"
+        }
+    },
+    {
+        "id": 186,
+        "timestamp": "2026-09-09T17:01:01Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "release_containment_action",
+        "event_type": "execution_response",
+        "status": "executed",
+        "detail": {
+            "result": {
+                "action_id": "ACT-BEEFD577",
+                "status": "released",
+                "command": {
+                    "action_id": "ACT-BEEFD577",
+                    "action_type": "inventory_hold",
+                    "description": "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                    "location": "Tier-1 Plant - Finished Goods",
+                    "quantity": 6,
+                    "status": "released"
+                }
+            },
+            "error": null
+        }
+    },
+    {
+        "id": 185,
+        "timestamp": "2026-09-09T17:01:01Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-5D3DDD24",
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "release_containment_action",
+        "event_type": "response_sent",
+        "status": "executed",
+        "detail": {}
+    },
+    {
+        "id": 184,
+        "timestamp": "2026-09-09T17:01:01Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-5D3DDD24",
+        "sender": "coordinator-agent",
+        "recipient": "logistics-agent",
+        "action": "release_containment_action",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 183,
+        "timestamp": "2026-09-09T17:01:01Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "frontend",
+        "recipient": "coordinator-agent",
+        "action": "release_material",
+        "event_type": "approval_decision",
+        "status": "approved",
+        "detail": {
+            "ref_id": "ACT-7B5F6D13",
+            "approved_by": "quality-manager",
+            "modification_note": null
+        }
+    },
+    {
+        "id": 182,
+        "timestamp": "2026-09-09T17:00:53Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": "inventory_hold",
+        "event_type": "action_status_update",
+        "status": "executed",
+        "detail": {
+            "ref_id": "ACT-BEEFD577"
+        }
+    },
+    {
+        "id": 181,
+        "timestamp": "2026-09-09T17:00:53Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": "release_material",
+        "event_type": "release_action_proposed",
+        "status": "awaiting_approval",
+        "detail": {
+            "ref_id": "ACT-7B5F6D13",
+            "releases_ref_id": "ACT-BEEFD577"
+        }
+    },
+    {
+        "id": 180,
+        "timestamp": "2026-09-09T17:00:53Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "execute_containment_action",
+        "event_type": "execution_response",
+        "status": "executed",
+        "detail": {
+            "result": {
+                "action_id": "ACT-BEEFD577",
+                "status": "executed",
+                "command": {
+                    "action_id": "ACT-BEEFD577",
+                    "action_type": "inventory_hold",
+                    "description": "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                    "location": "Tier-1 Plant - Finished Goods",
+                    "quantity": 6,
+                    "status": "executed"
+                }
+            },
+            "error": null
+        }
+    },
+    {
+        "id": 179,
+        "timestamp": "2026-09-09T17:00:53Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-4A753FA6",
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "execute_containment_action",
+        "event_type": "response_sent",
+        "status": "executed",
+        "detail": {}
+    },
+    {
+        "id": 178,
+        "timestamp": "2026-09-09T17:00:53Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-4A753FA6",
+        "sender": "coordinator-agent",
+        "recipient": "logistics-agent",
+        "action": "execute_containment_action",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 177,
+        "timestamp": "2026-09-09T17:00:53Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "frontend",
+        "recipient": "coordinator-agent",
+        "action": "inventory_hold",
+        "event_type": "approval_decision",
+        "status": "approved",
+        "detail": {
+            "ref_id": "ACT-BEEFD577",
+            "approved_by": "quality-manager",
+            "modification_note": null
+        }
+    },
+    {
+        "id": 176,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "frontend",
+        "action": null,
+        "event_type": "workflow_complete",
+        "status": "ok",
+        "detail": {
+            "selected_agents": [
+                "quality-rag-agent",
+                "traceability-agent",
+                "process-maintenance-agent",
+                "logistics-agent"
+            ]
+        }
+    },
+    {
+        "id": 175,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-D1EF8311",
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "assess_containment",
+        "event_type": "response",
+        "status": "ok",
+        "detail": {
+            "error": null,
+            "duration_ms": 26.9
+        }
+    },
+    {
+        "id": 174,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-D1EF8311",
+        "sender": "logistics-agent",
+        "recipient": "coordinator-agent",
+        "action": "assess_containment",
+        "event_type": "response_sent",
+        "status": "ok",
+        "detail": {}
+    },
+    {
+        "id": 173,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-D1EF8311",
+        "sender": "coordinator-agent",
+        "recipient": "logistics-agent",
+        "action": "assess_containment",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 172,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-D1EF8311",
+        "sender": "coordinator-agent",
+        "recipient": "logistics-agent",
+        "action": "assess_containment",
+        "event_type": "dispatch",
+        "status": "sent",
+        "detail": {
+            "payload_keys": [
+                "part_number",
+                "suspect_serial_numbers",
+                "suspect_count",
+                "containment_boundary_description"
+            ]
+        }
+    },
+    {
+        "id": 171,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-6E959161",
+        "sender": "process-maintenance-agent",
+        "recipient": "coordinator-agent",
+        "action": "analyze_process_deviations",
+        "event_type": "response",
+        "status": "ok",
+        "detail": {
+            "error": null,
+            "duration_ms": 23.8
+        }
+    },
+    {
+        "id": 170,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-6E959161",
+        "sender": "process-maintenance-agent",
+        "recipient": "coordinator-agent",
+        "action": "analyze_process_deviations",
+        "event_type": "response_sent",
+        "status": "ok",
+        "detail": {}
+    },
+    {
+        "id": 169,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-6E959161",
+        "sender": "coordinator-agent",
+        "recipient": "process-maintenance-agent",
+        "action": "analyze_process_deviations",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 168,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-6E959161",
+        "sender": "coordinator-agent",
+        "recipient": "process-maintenance-agent",
+        "action": "analyze_process_deviations",
+        "event_type": "dispatch",
+        "status": "sent",
+        "detail": {
+            "payload_keys": [
+                "date_range_start",
+                "date_range_end",
+                "line",
+                "shift",
+                "connector_lot"
+            ]
+        }
+    },
+    {
+        "id": 167,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-1123C3AE",
+        "sender": "traceability-agent",
+        "recipient": "coordinator-agent",
+        "action": "identify_suspect_population",
+        "event_type": "response",
+        "status": "ok",
+        "detail": {
+            "error": null,
+            "duration_ms": 25.2
+        }
+    },
+    {
+        "id": 166,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-1123C3AE",
+        "sender": "traceability-agent",
+        "recipient": "coordinator-agent",
+        "action": "identify_suspect_population",
+        "event_type": "response_sent",
+        "status": "ok",
+        "detail": {
+            "disproportionate_segment_found": true
+        }
+    },
+    {
+        "id": 165,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-1123C3AE",
+        "sender": "coordinator-agent",
+        "recipient": "traceability-agent",
+        "action": "identify_suspect_population",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 164,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-1123C3AE",
+        "sender": "coordinator-agent",
+        "recipient": "traceability-agent",
+        "action": "identify_suspect_population",
+        "event_type": "dispatch",
+        "status": "sent",
+        "detail": {
+            "payload_keys": [
+                "part_number",
+                "date_range_start",
+                "date_range_end"
+            ]
+        }
+    },
+    {
+        "id": 163,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-774A11D4",
+        "sender": "quality-rag-agent",
+        "recipient": "coordinator-agent",
+        "action": "retrieve_requirements",
+        "event_type": "response",
+        "status": "ok",
+        "detail": {
+            "error": null,
+            "duration_ms": 3790.3
+        }
+    },
+    {
+        "id": 162,
+        "timestamp": "2026-09-09T17:00:46Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-774A11D4",
+        "sender": "quality-rag-agent",
+        "recipient": "coordinator-agent",
+        "action": "retrieve_requirements",
+        "event_type": "response_sent",
+        "status": "ok",
+        "detail": {
+            "confidence": "high"
+        }
+    },
+    {
+        "id": 161,
+        "timestamp": "2026-09-09T17:00:42Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-774A11D4",
+        "sender": "coordinator-agent",
+        "recipient": "quality-rag-agent",
+        "action": "retrieve_requirements",
+        "event_type": "dispatch_received",
+        "status": "received",
+        "detail": {}
+    },
+    {
+        "id": 160,
+        "timestamp": "2026-09-09T17:00:42Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": "TASK-774A11D4",
+        "sender": "coordinator-agent",
+        "recipient": "quality-rag-agent",
+        "action": "retrieve_requirements",
+        "event_type": "dispatch",
+        "status": "sent",
+        "detail": {
+            "payload_keys": [
+                "query",
+                "symptom",
+                "top_k"
+            ]
+        }
+    },
+    {
+        "id": 159,
+        "timestamp": "2026-09-09T17:00:42Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "coordinator-agent",
+        "recipient": "coordinator-agent",
+        "action": null,
+        "event_type": "extraction_complete",
+        "status": "ok",
+        "detail": {
+            "customer": "Northbridge Motors",
+            "part_number": "EPS-2200-A",
+            "symptom": "intermittent steering warning lamp",
+            "date_range_start": "2025-05-08",
+            "date_range_end": "2025-05-18",
+            "urgency": "high",
+            "raw_complaint": "Northbridge Motors urgent: intermittent steering warning lamp EPS-2200-A, 2025-05-08 to 2025-05-18, some units shipped."
+        }
+    },
+    {
+        "id": 158,
+        "timestamp": "2026-09-09T17:00:38Z",
+        "correlation_id": "CORR-EC51B125",
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "task_id": null,
+        "sender": "frontend",
+        "recipient": "coordinator-agent",
+        "action": null,
+        "event_type": "incident_received",
+        "status": "received",
+        "detail": {
+            "complaint_text": "Northbridge Motors urgent: intermittent steering warning lamp EPS-2200-A, 2025-05-08 to 2025-05-18, some units shipped.",
+            "requested_by": "quality-manager"
+        }
+    }
+]

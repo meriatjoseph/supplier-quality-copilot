@@ -1,0 +1,14 @@
+calibration_date,machine_id,calibration_type,result,next_due
+2025-04-21,PRESS-4A,Force Cell,Pass,2025-05-21
+2025-04-21,PRESS-4B,Force Cell,Pass,2025-05-21
+2025-04-22,TORQUE-CAL-FIXTURE-1,Torque Reference,Pass,2025-05-22
+2025-04-28,PRESS-4A,Force Cell,Pass,2025-05-28
+2025-04-28,PRESS-4B,Force Cell,Pass,2025-05-28
+2025-04-29,TORQUE-CAL-FIXTURE-1,Torque Reference,Pass,2025-05-29
+2025-05-01,TORQUE-CAL-FIXTURE-1,Torque Reference,Pass,2025-05-31
+2025-05-07,PRESS-4A,Force Cell,Pass,2025-06-06
+2025-05-07,PRESS-4B,Force Cell,Pass,2025-06-06
+2025-05-08,TORQUE-CAL-FIXTURE-1,Torque Reference,Pass,2025-06-07
+2025-05-14,PRESS-4A,Force Cell,Pass,2025-06-13
+2025-05-14,PRESS-4B,Force Cell,Fail - Recalibrated,2025-06-13
+2025-05-15,TORQUE-CAL-FIXTURE-1,Torque Reference,Pass,2025-06-14

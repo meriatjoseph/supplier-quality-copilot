@@ -1,0 +1,858 @@
+{
+    "incident_id": "OEM-INC-1B0A7BD7",
+    "correlation_id": "CORR-EC51B125",
+    "requested_by": "quality-manager",
+    "created_at": "2026-09-09T17:00:46Z",
+    "extracted_incident": {
+        "customer": "Northbridge Motors",
+        "part_number": "EPS-2200-A",
+        "symptom": "intermittent steering warning lamp",
+        "date_range_start": "2025-05-08",
+        "date_range_end": "2025-05-18",
+        "urgency": "high",
+        "raw_complaint": "Northbridge Motors urgent: intermittent steering warning lamp EPS-2200-A, 2025-05-08 to 2025-05-18, some units shipped."
+    },
+    "selected_agents": [
+        "quality-rag-agent",
+        "traceability-agent",
+        "process-maintenance-agent",
+        "logistics-agent"
+    ],
+    "selection_reasons": {
+        "quality-rag-agent": "Always consulted for applicable customer requirements, control plan, and PFMEA guidance.",
+        "traceability-agent": "Always consulted to identify the suspect production population for the complaint's date range.",
+        "process-maintenance-agent": "Selected: urgency='high', symptom matched keyword(s) ['intermittent'] -- suggests a process/hardware root cause worth checking against control-plan limits.",
+        "logistics-agent": "Selected: urgency='high' -- potential shipped/field-affected product requires containment quantity assessment."
+    },
+    "agent_health": {
+        "quality-rag-agent": {
+            "up": true,
+            "response_time_ms": 17.7,
+            "detail": {
+                "service": "quality-rag-agent",
+                "status": "ok",
+                "chunks_indexed": 46
+            }
+        },
+        "traceability-agent": {
+            "up": true,
+            "response_time_ms": 5.3,
+            "detail": {
+                "service": "traceability-agent",
+                "status": "ok",
+                "production_records": 260
+            }
+        },
+        "process-maintenance-agent": {
+            "up": true,
+            "response_time_ms": 5.1,
+            "detail": {
+                "service": "process-maintenance-agent",
+                "status": "ok"
+            }
+        },
+        "logistics-agent": {
+            "up": true,
+            "response_time_ms": 5.8,
+            "detail": {
+                "service": "logistics-agent",
+                "status": "ok"
+            }
+        }
+    },
+    "agent_responses": {
+        "quality-rag-agent": {
+            "incident_id": "OEM-INC-1B0A7BD7",
+            "task_id": "TASK-774A11D4",
+            "correlation_id": "CORR-EC51B125",
+            "sender": "quality-rag-agent",
+            "recipient": "coordinator-agent",
+            "action": "retrieve_requirements",
+            "status": "ok",
+            "result": {
+                "query": "intermittent steering warning lamp EPS-2200-A requirements control plan PFMEA",
+                "evidence": [
+                    {
+                        "document": "EPS-2200 Process FMEA (PFMEA)",
+                        "section": "General",
+                        "content": "# EPS-2200 Process FMEA (PFMEA)\nDocument No: PFMEA-EPS-2200 Rev. D",
+                        "relevance": 0.611
+                    },
+                    {
+                        "document": "EPS-2200 Control Plan",
+                        "section": "Section 2: Connector Insertion Force \u2014 Control Characteristic",
+                        "content": "PM-EPS-PRESS-01.\nRationale: Under-force insertion can result in an intermittent electrical\nconnection at the harness-to-ECU interface that may not be detected at EOL\nunder bench conditions but can manifest intermittently in vehicle-level\nthermal/vibration conditions as an intermittent steering warning lamp event.",
+                        "relevance": 0.603
+                    },
+                    {
+                        "document": "Northbridge Motors \u2014 Customer-Specific Requirements (CSR)",
+                        "section": "Section 2: Zero-Defect Expectation for Safety-Critical Systems",
+                        "content": "## Section 2: Zero-Defect Expectation for Safety-Critical Systems\nEPS control modules are classified as Safety-Critical (Class A) components per\nNorthbridge's Design Failure Mode severity ranking, because a loss of assist or\nfalse steering warning indication can affect vehicle controllability. Suppliers\nmust maintain a rolling 12-month field PPM target of less than 5 PPM for\nsafety-related complaints. Any warranty return coded \"Steering Warning Lamp\nIllumination\" or \"Intermittent Loss of Assist\" must trigger an accelerated\n8D response per Section 4.",
+                        "relevance": 0.602
+                    },
+                    {
+                        "document": "8D Report (Historical Reference) \u2014 OEM-INC-2023-041",
+                        "section": "General",
+                        "content": "# 8D Report (Historical Reference) \u2014 OEM-INC-2023-041\nDocument No: 8D-2023-041 Rev. Final (Closed)\nPart: EPS-2200-A\nSymptom: Intermittent steering warning lamp illumination, no stored DTC\ncorrelating to an actual sensor fault.",
+                        "relevance": 0.58
+                    },
+                    {
+                        "document": "Northbridge Motors \u2014 Customer-Specific Requirements (CSR)",
+                        "section": "Section 7: Firmware Configuration Control",
+                        "content": "## Section 7: Firmware Configuration Control\nFirmware revisions for the steering angle/torque control algorithm must be\nunder configuration control. A firmware change affecting steering warning\nlamp logic or fault-code thresholds requires Northbridge Engineering\nnotification and, for safety-related logic, a Production Part Approval\nProcess (PPAP) Level 3 resubmission before it may be used in production\nintent for shipment to Northbridge.",
+                        "relevance": 0.569
+                    }
+                ],
+                "pfmea_control_plan_findings": [
+                    {
+                        "document": "EPS-2200 Process FMEA (PFMEA)",
+                        "section": "General",
+                        "content": "# EPS-2200 Process FMEA (PFMEA)\nDocument No: PFMEA-EPS-2200 Rev. D",
+                        "relevance": 0.611
+                    },
+                    {
+                        "document": "EPS-2200 Control Plan",
+                        "section": "Section 2: Connector Insertion Force \u2014 Control Characteristic",
+                        "content": "PM-EPS-PRESS-01.\nRationale: Under-force insertion can result in an intermittent electrical\nconnection at the harness-to-ECU interface that may not be detected at EOL\nunder bench conditions but can manifest intermittently in vehicle-level\nthermal/vibration conditions as an intermittent steering warning lamp event.",
+                        "relevance": 0.603
+                    },
+                    {
+                        "document": "EPS-2200 Control Plan",
+                        "section": "General",
+                        "content": "# EPS-2200 Control Plan\nDocument No: CP-EPS-2200 Rev. F\nProcess: EPS Control Module Assembly, Lines 1 & 2",
+                        "relevance": 0.559
+                    },
+                    {
+                        "document": "EPS-2200 Process FMEA (PFMEA)",
+                        "section": "Section 5: Recommended Priority",
+                        "content": "## Section 5: Recommended Priority\nBased on RPN ranking, Connector Insertion (RPN 180) and EOL Marginal\nDisposition (RPN 162) are the highest-priority failure modes for the\nintermittent steering-warning-lamp symptom family and should be the first\nareas investigated when this symptom is reported by the OEM.",
+                        "relevance": 0.554
+                    },
+                    {
+                        "document": "EPS-2200 Process FMEA (PFMEA)",
+                        "section": "Section 1: Process Step \u2014 Connector Insertion (Station 4A/4B)",
+                        "content": "## Section 1: Process Step \u2014 Connector Insertion (Station 4A/4B)\nPotential Failure Mode: Under-seated / low-force connector insertion\nPotential Effect: Intermittent electrical open at harness-to-ECU connector;\nat vehicle level this can present as an intermittent steering warning lamp\nillumination and/or momentary loss of torque assist signal, particularly\nunder vibration or thermal cycling.\nSeverity: 9 (safety-related, per Northbridge CSR Class A classification)\nPotential Cause: Connector press force out of calibration; worn press\ntooling; component lot dimensional variation in connector housing from\nsupplier lot; operator bypass of press cycle.\nCurrent Controls (Prevention): Press force spec 45-65N with automated\nmonitoring; incoming inspection sampling of connector lots.",
+                        "relevance": 0.532
+                    }
+                ],
+                "interpretation": "The retrieved passages indicate that the intermittent steering warning lamp issue with the EPS-2200-A is likely related to the connector insertion force, as under-force insertion can lead to intermittent electrical connections that may not be detected during end-of-line testing. Given that EPS control modules are classified as safety-critical components, the team must adhere to a zero-defect expectation and maintain a low field PPM for safety-related complaints. The historical 8D report highlights a similar symptom without a stored diagnostic trouble code, suggesting that the issue may not be linked to a specific sensor fault. The team should verify the connector insertion force during assembly and review any recent firmware changes that could affect the steering warning lamp logic, ensuring compliance with configuration control requirements.",
+                "confidence": "high",
+                "no_evidence_found": false
+            },
+            "error": null,
+            "timestamp": "2026-09-09T17:00:46Z",
+            "duration_ms": 3790.3
+        },
+        "traceability-agent": {
+            "incident_id": "OEM-INC-1B0A7BD7",
+            "task_id": "TASK-1123C3AE",
+            "correlation_id": "CORR-EC51B125",
+            "sender": "traceability-agent",
+            "recipient": "coordinator-agent",
+            "action": "identify_suspect_population",
+            "status": "ok",
+            "result": {
+                "date_range_used": {
+                    "start": "2025-05-08",
+                    "end": "2025-05-18"
+                },
+                "part_number_filter": "EPS-2200-A",
+                "total_units_in_range": 67,
+                "overall_bad_rate": 0.299,
+                "segment_analysis": [
+                    {
+                        "line": "Line 2",
+                        "shift": "Evening",
+                        "connector_lot": "CON-771",
+                        "count": 19,
+                        "bad_count": 18,
+                        "bad_rate": 0.947
+                    },
+                    {
+                        "line": "Line 2",
+                        "shift": "Day",
+                        "connector_lot": "CON-771",
+                        "count": 6,
+                        "bad_count": 0,
+                        "bad_rate": 0.0
+                    },
+                    {
+                        "line": "Line 2",
+                        "shift": "Evening",
+                        "connector_lot": "CON-765",
+                        "count": 5,
+                        "bad_count": 0,
+                        "bad_rate": 0.0
+                    }
+                ],
+                "firmware_analysis": [
+                    {
+                        "firmware_version": "3.8.1",
+                        "count": 43,
+                        "bad_count": 15,
+                        "bad_rate": 0.349
+                    },
+                    {
+                        "firmware_version": "3.8.0",
+                        "count": 24,
+                        "bad_count": 5,
+                        "bad_rate": 0.208
+                    }
+                ],
+                "disproportionate_segment_found": true,
+                "suspect_population": {
+                    "line": "Line 2",
+                    "shift": "Evening",
+                    "connector_lot": "CON-771",
+                    "serial_numbers": [
+                        "SN-EPS100165",
+                        "SN-EPS100176",
+                        "SN-EPS100177",
+                        "SN-EPS100178",
+                        "SN-EPS100183",
+                        "SN-EPS100186",
+                        "SN-EPS100187",
+                        "SN-EPS100188",
+                        "SN-EPS100189",
+                        "SN-EPS100197",
+                        "SN-EPS100199",
+                        "SN-EPS100204",
+                        "SN-EPS100211",
+                        "SN-EPS100215",
+                        "SN-EPS100216",
+                        "SN-EPS100218",
+                        "SN-EPS100221",
+                        "SN-EPS100225",
+                        "SN-EPS100227"
+                    ],
+                    "count": 19,
+                    "bad_count": 18,
+                    "bad_rate": 0.947,
+                    "production_date_range": {
+                        "start": "2025-05-09 14:28",
+                        "end": "2025-05-16 21:48"
+                    }
+                },
+                "common_factor": "Line=Line 2, Shift=Evening, Connector Lot=CON-771: 18/19 units (95%) scored Marginal/Fail at EOL, vs 30% across the full population in this window (3.2x higher).",
+                "recommended_containment_boundary": "Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                "reasoning": "Segment Line 2/Evening/CON-771 is the narrowest grouping (line x shift x component lot) showing a disproportionate EOL Marginal/Fail concentration -- 95% vs 30% baseline -- and meets the minimum group size (5 units) to be a meaningful pattern rather than noise. Firmware version shows a notable bad-rate spread (14%) and should also be considered as a contributing factor."
+            },
+            "error": null,
+            "timestamp": "2026-09-09T17:00:46Z",
+            "duration_ms": 25.2
+        },
+        "process-maintenance-agent": {
+            "incident_id": "OEM-INC-1B0A7BD7",
+            "task_id": "TASK-6E959161",
+            "correlation_id": "CORR-EC51B125",
+            "sender": "process-maintenance-agent",
+            "recipient": "coordinator-agent",
+            "action": "analyze_process_deviations",
+            "status": "ok",
+            "result": {
+                "date_range_used": {
+                    "start": "2025-05-08",
+                    "end": "2025-05-18"
+                },
+                "scope_filters": {
+                    "line": "Line 2",
+                    "shift": "Evening",
+                    "connector_lot": "CON-771"
+                },
+                "units_analyzed": 25,
+                "total_units_out_of_spec": 21,
+                "deviations": [
+                    {
+                        "parameter": "connector_insertion_force_n",
+                        "machine_id": "PRESS-4B",
+                        "spec_limits": {
+                            "min": 45.0,
+                            "max": 65.0,
+                            "unit": "N"
+                        },
+                        "units_checked": 25,
+                        "units_out_of_spec": 21,
+                        "out_of_spec_pct": 0.84,
+                        "mean_reading_out_of_spec_group": 38.6,
+                        "severity": "high",
+                        "related_alarm_count": 21,
+                        "calibration_gap": null,
+                        "related_maintenance_records": [
+                            {
+                                "date": "2025-05-16T00:00:00",
+                                "machine_id": "PRESS-4B",
+                                "line": "Line 2",
+                                "work_type": "Corrective",
+                                "description": "Investigated repeated FORCE_LOW_4B alarms on Evening shift. Found press force-cell calibration had drifted low following a missed 30-day calibration cycle (due 2025-05-09, not performed until 2025-05-16). Recalibrated force cell and replaced worn insertion tooling. Verified force output within 45-65N spec post-repair.",
+                                "technician_id": "MAINT-07"
+                            },
+                            {
+                                "date": "2025-05-09T00:00:00",
+                                "machine_id": "PRESS-4B",
+                                "line": "Line 2",
+                                "work_type": "Preventive (Missed)",
+                                "description": "Scheduled 30-day force-cell calibration for PRESS-4B was not completed as planned due to technician availability; rescheduled.",
+                                "technician_id": "MAINT-03"
+                            }
+                        ]
+                    }
+                ],
+                "diagnostic_recommendations": [
+                    {
+                        "machine_id": "PRESS-4B",
+                        "recommendation": "Machine PRESS-4B: 21/25 units (84%) had connector insertion force outside the 45.0-65.0N control-plan limit. 21 FORCE_LOW alarm(s) logged on this machine in-window.",
+                        "suggested_checks": [
+                            "Recalibrate connector press force cell against certified reference standard.",
+                            "Inspect/replace insertion tooling for wear.",
+                            "Audit 30-day calibration cycle compliance for this machine.",
+                            "Re-test contact resistance on affected units to confirm connector seating."
+                        ],
+                        "temporary_process_control": "Increase force-reading verification frequency on PRESS-4B to every unit (if not already 100%) and add a secondary operator visual check of connector seating until recalibration is verified."
+                    }
+                ],
+                "proposed_work_order": {
+                    "work_order_id": "WO-BA454F6E",
+                    "work_order_type": "Corrective Maintenance",
+                    "machine_id": "PRESS-4B",
+                    "description": "Recalibrate and inspect PRESS-4B connector press force cell/tooling. 21 of 25 units in the investigation window read outside the 45.0-65.0N control-plan spec.",
+                    "priority": "High",
+                    "status": "awaiting_approval"
+                }
+            },
+            "error": null,
+            "timestamp": "2026-09-09T17:00:46Z",
+            "duration_ms": 23.8
+        },
+        "logistics-agent": {
+            "incident_id": "OEM-INC-1B0A7BD7",
+            "task_id": "TASK-D1EF8311",
+            "correlation_id": "CORR-EC51B125",
+            "sender": "logistics-agent",
+            "recipient": "coordinator-agent",
+            "action": "assess_containment",
+            "status": "ok",
+            "result": {
+                "part_number": "EPS-2200-A",
+                "suspect_count_total": 19,
+                "affected_by_location": {
+                    "tier1_plant": {
+                        "estimated_suspect_units_on_hand": 6,
+                        "total_part_inventory_on_hand": 389,
+                        "proposed_action": "inventory_hold"
+                    },
+                    "in_transit": {
+                        "suspect_units": 2,
+                        "proposed_action": "shipment_block"
+                    },
+                    "delivered_to_oem_or_warehouse": {
+                        "suspect_units": 11,
+                        "breakdown_by_destination": [
+                            {
+                                "status": "Delivered",
+                                "destination": "Northbridge Assembly Plant - Danforth",
+                                "count": 1
+                            },
+                            {
+                                "status": "Delivered",
+                                "destination": "Northbridge Assembly Plant - Riverbend",
+                                "count": 3
+                            },
+                            {
+                                "status": "Delivered",
+                                "destination": "Third-Party Warehouse - Midwest DC",
+                                "count": 7
+                            },
+                            {
+                                "status": "In-Transit",
+                                "destination": "Northbridge Assembly Plant - Riverbend",
+                                "count": 2
+                            }
+                        ],
+                        "proposed_action": "100_percent_sort_and_notify_oem"
+                    }
+                },
+                "proposed_actions": [
+                    {
+                        "action_id": "ACT-BEEFD577",
+                        "action_type": "inventory_hold",
+                        "description": "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                        "location": "Tier-1 Plant - Finished Goods",
+                        "quantity": 6,
+                        "status": "awaiting_approval"
+                    },
+                    {
+                        "action_id": "ACT-6FD5CDE2",
+                        "action_type": "shipment_block",
+                        "description": "Issue shipment-block / intercept instruction for 2 suspect unit(s) currently in-transit to Northbridge. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                        "location": "In-Transit",
+                        "quantity": 2,
+                        "status": "awaiting_approval"
+                    },
+                    {
+                        "action_id": "ACT-F1A5AD3A",
+                        "action_type": "100_percent_sort",
+                        "description": "Request 100% sort/inspection and OEM notification for 11 suspect unit(s) already delivered to Northbridge/third-party warehouse. Do not contact dealers directly per containment procedure -- escalate through Northbridge Supplier Quality. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                        "location": "Delivered (OEM / Third-Party Warehouse)",
+                        "quantity": 11,
+                        "status": "awaiting_approval"
+                    }
+                ]
+            },
+            "error": null,
+            "timestamp": "2026-09-09T17:00:46Z",
+            "duration_ms": 26.9
+        }
+    },
+    "consolidated": {
+        "complaint_summary": "Northbridge Motors reported 'intermittent steering warning lamp' for part EPS-2200-A, urgency=high, date range 2025-05-08 to 2025-05-18.",
+        "retrieved_requirements": [
+            {
+                "document": "EPS-2200 Process FMEA (PFMEA)",
+                "section": "General",
+                "content": "# EPS-2200 Process FMEA (PFMEA)\nDocument No: PFMEA-EPS-2200 Rev. D",
+                "relevance": 0.611,
+                "category": "Retrieved Requirement",
+                "kind": "general"
+            },
+            {
+                "document": "EPS-2200 Control Plan",
+                "section": "Section 2: Connector Insertion Force \u2014 Control Characteristic",
+                "content": "PM-EPS-PRESS-01.\nRationale: Under-force insertion can result in an intermittent electrical\nconnection at the harness-to-ECU interface that may not be detected at EOL\nunder bench conditions but can manifest intermittently in vehicle-level\nthermal/vibration conditions as an intermittent steering warning lamp event.",
+                "relevance": 0.603,
+                "category": "Retrieved Requirement",
+                "kind": "general"
+            },
+            {
+                "document": "Northbridge Motors \u2014 Customer-Specific Requirements (CSR)",
+                "section": "Section 2: Zero-Defect Expectation for Safety-Critical Systems",
+                "content": "## Section 2: Zero-Defect Expectation for Safety-Critical Systems\nEPS control modules are classified as Safety-Critical (Class A) components per\nNorthbridge's Design Failure Mode severity ranking, because a loss of assist or\nfalse steering warning indication can affect vehicle controllability. Suppliers\nmust maintain a rolling 12-month field PPM target of less than 5 PPM for\nsafety-related complaints. Any warranty return coded \"Steering Warning Lamp\nIllumination\" or \"Intermittent Loss of Assist\" must trigger an accelerated\n8D response per Section 4.",
+                "relevance": 0.602,
+                "category": "Retrieved Requirement",
+                "kind": "general"
+            },
+            {
+                "document": "8D Report (Historical Reference) \u2014 OEM-INC-2023-041",
+                "section": "General",
+                "content": "# 8D Report (Historical Reference) \u2014 OEM-INC-2023-041\nDocument No: 8D-2023-041 Rev. Final (Closed)\nPart: EPS-2200-A\nSymptom: Intermittent steering warning lamp illumination, no stored DTC\ncorrelating to an actual sensor fault.",
+                "relevance": 0.58,
+                "category": "Retrieved Requirement",
+                "kind": "general"
+            },
+            {
+                "document": "Northbridge Motors \u2014 Customer-Specific Requirements (CSR)",
+                "section": "Section 7: Firmware Configuration Control",
+                "content": "## Section 7: Firmware Configuration Control\nFirmware revisions for the steering angle/torque control algorithm must be\nunder configuration control. A firmware change affecting steering warning\nlamp logic or fault-code thresholds requires Northbridge Engineering\nnotification and, for safety-related logic, a Production Part Approval\nProcess (PPAP) Level 3 resubmission before it may be used in production\nintent for shipment to Northbridge.",
+                "relevance": 0.569,
+                "category": "Retrieved Requirement",
+                "kind": "general"
+            },
+            {
+                "document": "EPS-2200 Process FMEA (PFMEA)",
+                "section": "General",
+                "content": "# EPS-2200 Process FMEA (PFMEA)\nDocument No: PFMEA-EPS-2200 Rev. D",
+                "relevance": 0.611,
+                "category": "Retrieved Requirement",
+                "kind": "pfmea_control_plan"
+            },
+            {
+                "document": "EPS-2200 Control Plan",
+                "section": "Section 2: Connector Insertion Force \u2014 Control Characteristic",
+                "content": "PM-EPS-PRESS-01.\nRationale: Under-force insertion can result in an intermittent electrical\nconnection at the harness-to-ECU interface that may not be detected at EOL\nunder bench conditions but can manifest intermittently in vehicle-level\nthermal/vibration conditions as an intermittent steering warning lamp event.",
+                "relevance": 0.603,
+                "category": "Retrieved Requirement",
+                "kind": "pfmea_control_plan"
+            },
+            {
+                "document": "EPS-2200 Control Plan",
+                "section": "General",
+                "content": "# EPS-2200 Control Plan\nDocument No: CP-EPS-2200 Rev. F\nProcess: EPS Control Module Assembly, Lines 1 & 2",
+                "relevance": 0.559,
+                "category": "Retrieved Requirement",
+                "kind": "pfmea_control_plan"
+            },
+            {
+                "document": "EPS-2200 Process FMEA (PFMEA)",
+                "section": "Section 5: Recommended Priority",
+                "content": "## Section 5: Recommended Priority\nBased on RPN ranking, Connector Insertion (RPN 180) and EOL Marginal\nDisposition (RPN 162) are the highest-priority failure modes for the\nintermittent steering-warning-lamp symptom family and should be the first\nareas investigated when this symptom is reported by the OEM.",
+                "relevance": 0.554,
+                "category": "Retrieved Requirement",
+                "kind": "pfmea_control_plan"
+            },
+            {
+                "document": "EPS-2200 Process FMEA (PFMEA)",
+                "section": "Section 1: Process Step \u2014 Connector Insertion (Station 4A/4B)",
+                "content": "## Section 1: Process Step \u2014 Connector Insertion (Station 4A/4B)\nPotential Failure Mode: Under-seated / low-force connector insertion\nPotential Effect: Intermittent electrical open at harness-to-ECU connector;\nat vehicle level this can present as an intermittent steering warning lamp\nillumination and/or momentary loss of torque assist signal, particularly\nunder vibration or thermal cycling.\nSeverity: 9 (safety-related, per Northbridge CSR Class A classification)\nPotential Cause: Connector press force out of calibration; worn press\ntooling; component lot dimensional variation in connector housing from\nsupplier lot; operator bypass of press cycle.\nCurrent Controls (Prevention): Press force spec 45-65N with automated\nmonitoring; incoming inspection sampling of connector lots.",
+                "relevance": 0.532,
+                "category": "Retrieved Requirement",
+                "kind": "pfmea_control_plan"
+            }
+        ],
+        "manufacturing_data_findings": [
+            {
+                "category": "Manufacturing-Data Finding",
+                "source": "traceability-agent",
+                "text": "Line=Line 2, Shift=Evening, Connector Lot=CON-771: 18/19 units (95%) scored Marginal/Fail at EOL, vs 30% across the full population in this window (3.2x higher)."
+            },
+            {
+                "category": "Manufacturing-Data Finding",
+                "source": "process-maintenance-agent",
+                "text": "Machine PRESS-4B: 21/25 units (84%) out of spec on connector_insertion_force_n (45.0-65.0N)."
+            },
+            {
+                "category": "Manufacturing-Data Finding",
+                "source": "logistics-agent",
+                "text": "Suspect units by location -- Tier-1 Plant: 6, In-Transit: 2, Delivered (OEM/Warehouse): 11."
+            }
+        ],
+        "agent_hypotheses": [
+            {
+                "category": "Agent Hypothesis",
+                "source": "quality-rag-agent",
+                "text": "The retrieved passages indicate that the intermittent steering warning lamp issue with the EPS-2200-A is likely related to the connector insertion force, as under-force insertion can lead to intermittent electrical connections that may not be detected during end-of-line testing. Given that EPS control modules are classified as safety-critical components, the team must adhere to a zero-defect expectation and maintain a low field PPM for safety-related complaints. The historical 8D report highlights a similar symptom without a stored diagnostic trouble code, suggesting that the issue may not be linked to a specific sensor fault. The team should verify the connector insertion force during assembly and review any recent firmware changes that could affect the steering warning lamp logic, ensuring compliance with configuration control requirements."
+            },
+            {
+                "category": "Agent Hypothesis",
+                "source": "traceability-agent",
+                "text": "Segment Line 2/Evening/CON-771 is the narrowest grouping (line x shift x component lot) showing a disproportionate EOL Marginal/Fail concentration -- 95% vs 30% baseline -- and meets the minimum group size (5 units) to be a meaningful pattern rather than noise. Firmware version shows a notable bad-rate spread (14%) and should also be considered as a contributing factor."
+            },
+            {
+                "category": "Agent Hypothesis",
+                "source": "process-maintenance-agent",
+                "text": "Machine PRESS-4B: 21/25 units (84%) had connector insertion force outside the 45.0-65.0N control-plan limit. 21 FORCE_LOW alarm(s) logged on this machine in-window."
+            }
+        ],
+        "human_approved_actions": [
+            {
+                "category": "Human-Approved Action",
+                "source": "logistics-agent",
+                "text": "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                "action_type": "inventory_hold",
+                "approved_by": "quality-manager"
+            },
+            {
+                "category": "Human-Approved Action",
+                "source": "logistics-agent",
+                "text": "Release previously-contained material for approved inventory_hold (ref ACT-BEEFD577) back to shippable status, once root cause is confirmed resolved.",
+                "action_type": "release_material",
+                "approved_by": "quality-manager"
+            },
+            {
+                "category": "Human-Approved Action",
+                "source": "process-maintenance-agent",
+                "text": "Recalibrate and inspect PRESS-4B connector press force cell/tooling. 21 of 25 units in the investigation window read outside the 45.0-65.0N control-plan spec.",
+                "action_type": "work_order",
+                "approved_by": "quality-manager"
+            },
+            {
+                "category": "Human-Approved Action",
+                "source": "coordinator-agent",
+                "text": "Notify Northbridge Motors Supplier Quality of suspect population, containment boundary, and preliminary findings for EPS-2200-A per CSR Section 5 (24-hour notification requirement).",
+                "action_type": "oem_notification",
+                "approved_by": "quality-manager"
+            },
+            {
+                "category": "Human-Approved Action",
+                "source": "coordinator-agent",
+                "text": "Submit interim 8D (D1-D3) to Northbridge Motors Supplier Quality within the 3-day requirement.",
+                "action_type": "8d_update",
+                "approved_by": "quality-manager"
+            }
+        ],
+        "conflicts": [],
+        "evidence_gaps": [],
+        "recommended_containment": [
+            "Recalibrate and inspect PRESS-4B connector press force cell/tooling. 21 of 25 units in the investigation window read outside the 45.0-65.0N control-plan spec.",
+            "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+            "Issue shipment-block / intercept instruction for 2 suspect unit(s) currently in-transit to Northbridge. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+            "Request 100% sort/inspection and OEM notification for 11 suspect unit(s) already delivered to Northbridge/third-party warehouse. Do not contact dealers directly per containment procedure -- escalate through Northbridge Supplier Quality. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units)."
+        ],
+        "suspect_quantity_by_location": {
+            "tier1_plant": {
+                "estimated_suspect_units_on_hand": 6,
+                "total_part_inventory_on_hand": 389,
+                "proposed_action": "inventory_hold"
+            },
+            "in_transit": {
+                "suspect_units": 2,
+                "proposed_action": "shipment_block"
+            },
+            "delivered_to_oem_or_warehouse": {
+                "suspect_units": 11,
+                "breakdown_by_destination": [
+                    {
+                        "status": "Delivered",
+                        "destination": "Northbridge Assembly Plant - Danforth",
+                        "count": 1
+                    },
+                    {
+                        "status": "Delivered",
+                        "destination": "Northbridge Assembly Plant - Riverbend",
+                        "count": 3
+                    },
+                    {
+                        "status": "Delivered",
+                        "destination": "Third-Party Warehouse - Midwest DC",
+                        "count": 7
+                    },
+                    {
+                        "status": "In-Transit",
+                        "destination": "Northbridge Assembly Plant - Riverbend",
+                        "count": 2
+                    }
+                ],
+                "proposed_action": "100_percent_sort_and_notify_oem"
+            }
+        },
+        "suspect_population": {
+            "line": "Line 2",
+            "shift": "Evening",
+            "connector_lot": "CON-771",
+            "serial_numbers": [
+                "SN-EPS100165",
+                "SN-EPS100176",
+                "SN-EPS100177",
+                "SN-EPS100178",
+                "SN-EPS100183",
+                "SN-EPS100186",
+                "SN-EPS100187",
+                "SN-EPS100188",
+                "SN-EPS100189",
+                "SN-EPS100197",
+                "SN-EPS100199",
+                "SN-EPS100204",
+                "SN-EPS100211",
+                "SN-EPS100215",
+                "SN-EPS100216",
+                "SN-EPS100218",
+                "SN-EPS100221",
+                "SN-EPS100225",
+                "SN-EPS100227"
+            ],
+            "count": 19,
+            "bad_count": 18,
+            "bad_rate": 0.947,
+            "production_date_range": {
+                "start": "2025-05-09 14:28",
+                "end": "2025-05-16 21:48"
+            }
+        },
+        "proposed_actions": [
+            {
+                "agent": "process-maintenance-agent",
+                "ref_id": "WO-BA454F6E",
+                "action_type": "work_order",
+                "description": "Recalibrate and inspect PRESS-4B connector press force cell/tooling. 21 of 25 units in the investigation window read outside the 45.0-65.0N control-plan spec.",
+                "status": "executed",
+                "priority": "High"
+            },
+            {
+                "agent": "logistics-agent",
+                "ref_id": "ACT-BEEFD577",
+                "action_type": "inventory_hold",
+                "description": "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                "status": "executed",
+                "priority": "High"
+            },
+            {
+                "agent": "logistics-agent",
+                "ref_id": "ACT-6FD5CDE2",
+                "action_type": "shipment_block",
+                "description": "Issue shipment-block / intercept instruction for 2 suspect unit(s) currently in-transit to Northbridge. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                "status": "rejected",
+                "priority": "High"
+            },
+            {
+                "agent": "logistics-agent",
+                "ref_id": "ACT-F1A5AD3A",
+                "action_type": "100_percent_sort",
+                "description": "Request 100% sort/inspection and OEM notification for 11 suspect unit(s) already delivered to Northbridge/third-party warehouse. Do not contact dealers directly per containment procedure -- escalate through Northbridge Supplier Quality. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                "status": "awaiting_approval",
+                "priority": "High"
+            },
+            {
+                "agent": "coordinator-agent",
+                "ref_id": "ACT-F321F389",
+                "action_type": "oem_notification",
+                "description": "Notify Northbridge Motors Supplier Quality of suspect population, containment boundary, and preliminary findings for EPS-2200-A per CSR Section 5 (24-hour notification requirement).",
+                "status": "executed",
+                "priority": "High"
+            },
+            {
+                "agent": "coordinator-agent",
+                "ref_id": "ACT-7FDBA68F",
+                "action_type": "8d_update",
+                "description": "Submit interim 8D (D1-D3) to Northbridge Motors Supplier Quality within the 3-day requirement.",
+                "status": "executed",
+                "priority": "Medium"
+            },
+            {
+                "agent": "logistics-agent",
+                "ref_id": "ACT-7B5F6D13",
+                "action_type": "release_material",
+                "description": "Release previously-contained material for approved inventory_hold (ref ACT-BEEFD577) back to shippable status, once root cause is confirmed resolved.",
+                "status": "released",
+                "priority": "Low",
+                "releases_ref_id": "ACT-BEEFD577"
+            }
+        ]
+    },
+    "proposed_actions": [
+        {
+            "agent": "process-maintenance-agent",
+            "ref_id": "WO-BA454F6E",
+            "action_type": "work_order",
+            "description": "Recalibrate and inspect PRESS-4B connector press force cell/tooling. 21 of 25 units in the investigation window read outside the 45.0-65.0N control-plan spec.",
+            "status": "executed",
+            "priority": "High"
+        },
+        {
+            "agent": "logistics-agent",
+            "ref_id": "ACT-BEEFD577",
+            "action_type": "inventory_hold",
+            "description": "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+            "status": "executed",
+            "priority": "High"
+        },
+        {
+            "agent": "logistics-agent",
+            "ref_id": "ACT-6FD5CDE2",
+            "action_type": "shipment_block",
+            "description": "Issue shipment-block / intercept instruction for 2 suspect unit(s) currently in-transit to Northbridge. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+            "status": "rejected",
+            "priority": "High"
+        },
+        {
+            "agent": "logistics-agent",
+            "ref_id": "ACT-F1A5AD3A",
+            "action_type": "100_percent_sort",
+            "description": "Request 100% sort/inspection and OEM notification for 11 suspect unit(s) already delivered to Northbridge/third-party warehouse. Do not contact dealers directly per containment procedure -- escalate through Northbridge Supplier Quality. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+            "status": "awaiting_approval",
+            "priority": "High"
+        },
+        {
+            "agent": "coordinator-agent",
+            "ref_id": "ACT-F321F389",
+            "action_type": "oem_notification",
+            "description": "Notify Northbridge Motors Supplier Quality of suspect population, containment boundary, and preliminary findings for EPS-2200-A per CSR Section 5 (24-hour notification requirement).",
+            "status": "executed",
+            "priority": "High"
+        },
+        {
+            "agent": "coordinator-agent",
+            "ref_id": "ACT-7FDBA68F",
+            "action_type": "8d_update",
+            "description": "Submit interim 8D (D1-D3) to Northbridge Motors Supplier Quality within the 3-day requirement.",
+            "status": "executed",
+            "priority": "Medium"
+        },
+        {
+            "agent": "logistics-agent",
+            "ref_id": "ACT-7B5F6D13",
+            "action_type": "release_material",
+            "description": "Release previously-contained material for approved inventory_hold (ref ACT-BEEFD577) back to shippable status, once root cause is confirmed resolved.",
+            "status": "released",
+            "priority": "Low",
+            "releases_ref_id": "ACT-BEEFD577"
+        }
+    ],
+    "draft_8d": {
+        "incident_id": "OEM-INC-1B0A7BD7",
+        "correlation_id": "CORR-EC51B125",
+        "generated_at_note": "Auto-generated from collected agent findings; regenerate after further approvals to refresh D6/D7-adjacent sections.",
+        "D1_team": [
+            "quality-rag-agent (automated agent)",
+            "traceability-agent (automated agent)",
+            "process-maintenance-agent (automated agent)",
+            "logistics-agent (automated agent)",
+            "Human Quality Manager (approval authority)"
+        ],
+        "D2_problem_description": {
+            "customer": "Northbridge Motors",
+            "part_number": "EPS-2200-A",
+            "symptom": "intermittent steering warning lamp",
+            "raw_complaint": "Northbridge Motors urgent: intermittent steering warning lamp EPS-2200-A, 2025-05-08 to 2025-05-18, some units shipped.",
+            "urgency": "high"
+        },
+        "D3_interim_containment": [
+            "Recalibrate and inspect PRESS-4B connector press force cell/tooling. 21 of 25 units in the investigation window read outside the 45.0-65.0N control-plan spec.",
+            "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+            "Issue shipment-block / intercept instruction for 2 suspect unit(s) currently in-transit to Northbridge. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+            "Request 100% sort/inspection and OEM notification for 11 suspect unit(s) already delivered to Northbridge/third-party warehouse. Do not contact dealers directly per containment procedure -- escalate through Northbridge Supplier Quality. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units)."
+        ],
+        "D4_preliminary_causes_and_gaps": {
+            "hypotheses": [
+                "The retrieved passages indicate that the intermittent steering warning lamp issue with the EPS-2200-A is likely related to the connector insertion force, as under-force insertion can lead to intermittent electrical connections that may not be detected during end-of-line testing. Given that EPS control modules are classified as safety-critical components, the team must adhere to a zero-defect expectation and maintain a low field PPM for safety-related complaints. The historical 8D report highlights a similar symptom without a stored diagnostic trouble code, suggesting that the issue may not be linked to a specific sensor fault. The team should verify the connector insertion force during assembly and review any recent firmware changes that could affect the steering warning lamp logic, ensuring compliance with configuration control requirements.",
+                "Segment Line 2/Evening/CON-771 is the narrowest grouping (line x shift x component lot) showing a disproportionate EOL Marginal/Fail concentration -- 95% vs 30% baseline -- and meets the minimum group size (5 units) to be a meaningful pattern rather than noise. Firmware version shows a notable bad-rate spread (14%) and should also be considered as a contributing factor.",
+                "Machine PRESS-4B: 21/25 units (84%) had connector insertion force outside the 45.0-65.0N control-plan limit. 21 FORCE_LOW alarm(s) logged on this machine in-window."
+            ],
+            "conflicts_to_reconcile": [],
+            "evidence_gaps": []
+        },
+        "affected_part_numbers": [
+            "EPS-2200-A"
+        ],
+        "suspect_quantities": {
+            "total_suspect_units": 19,
+            "by_location": {
+                "tier1_plant": {
+                    "estimated_suspect_units_on_hand": 6,
+                    "total_part_inventory_on_hand": 389,
+                    "proposed_action": "inventory_hold"
+                },
+                "in_transit": {
+                    "suspect_units": 2,
+                    "proposed_action": "shipment_block"
+                },
+                "delivered_to_oem_or_warehouse": {
+                    "suspect_units": 11,
+                    "breakdown_by_destination": [
+                        {
+                            "status": "Delivered",
+                            "destination": "Northbridge Assembly Plant - Danforth",
+                            "count": 1
+                        },
+                        {
+                            "status": "Delivered",
+                            "destination": "Northbridge Assembly Plant - Riverbend",
+                            "count": 3
+                        },
+                        {
+                            "status": "Delivered",
+                            "destination": "Third-Party Warehouse - Midwest DC",
+                            "count": 7
+                        },
+                        {
+                            "status": "In-Transit",
+                            "destination": "Northbridge Assembly Plant - Riverbend",
+                            "count": 2
+                        }
+                    ],
+                    "proposed_action": "100_percent_sort_and_notify_oem"
+                }
+            }
+        },
+        "traceability_range": {
+            "date_range_used": {
+                "start": "2025-05-08",
+                "end": "2025-05-18"
+            },
+            "containment_boundary": "Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units)."
+        },
+        "customer_communication_summary": "Draft notification to Northbridge Motors Supplier Quality: suspect population of 19 units identified (Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).); interim containment actions proposed and pending/receiving approval; root cause investigation ongoing per D4.",
+        "D5_D6_D7_status": "Not yet started -- pending root cause confirmation and effectiveness verification (out of scope for this initial draft).",
+        "approved_actions": [
+            {
+                "action_type": "inventory_hold",
+                "description": "Place inventory hold on 6 suspect unit(s) of EPS-2200-A at Tier-1 Plant. Hold all units from Line 2, Evening shift, component lot CON-771, produced 2025-05-09 14:28 to 2025-05-16 21:48 (19 units).",
+                "owner_agent": "logistics-agent",
+                "status": "executed"
+            },
+            {
+                "action_type": "release_material",
+                "description": "Release previously-contained material for approved inventory_hold (ref ACT-BEEFD577) back to shippable status, once root cause is confirmed resolved.",
+                "owner_agent": "logistics-agent",
+                "status": "released"
+            }
+        ]
+    }
+}

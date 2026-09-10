@@ -1,0 +1,6 @@
+date,machine_id,line,work_type,description,technician_id
+2025-05-16,PRESS-4B,Line 2,Corrective,"Investigated repeated FORCE_LOW_4B alarms on Evening shift. Found press force-cell calibration had drifted low following a missed 30-day calibration cycle (due 2025-05-09, not performed until 2025-05-16). Recalibrated force cell and replaced worn insertion tooling. Verified force output within 45-65N spec post-repair.",MAINT-07
+2025-05-09,PRESS-4B,Line 2,Preventive (Missed),Scheduled 30-day force-cell calibration for PRESS-4B was not completed as planned due to technician availability; rescheduled.,MAINT-03
+2025-04-22,PRESS-4A,Line 1,Preventive,Routine 30-day force-cell calibration and tooling inspection. Within spec.,MAINT-03
+2025-05-02,EOL-TESTER-1,Both,Preventive,Routine EOL tester reference-standard verification. Within spec.,MAINT-05
+2025-04-28,FLASH-STN-1,Both,Corrective,Updated flash station firmware image repository to remove superseded 3.7.9 image per AFL update; confirmed only 3.8.0/3.8.1 available for flashing.,MAINT-09

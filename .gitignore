@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Local dev audit log (real audit trail lives on the docker-compose volume)
+data/audit.db
+data/audit.db-*
+
+# Secrets -- API keys for docker-compose are loaded from .env, never committed
+.env
+
+# Streamlit local
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db

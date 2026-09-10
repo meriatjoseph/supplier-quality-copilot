@@ -1,0 +1,9 @@
+location_name,location_type,part_number,quantity_on_hand
+Tier-1 Plant - Finished Goods,plant,EPS-2200-A,389
+Tier-1 Plant - Finished Goods,plant,EPS-2200-B,226
+In-Transit to Northbridge Assembly Plant,in_transit,EPS-2200-A,357
+In-Transit to Northbridge Assembly Plant,in_transit,EPS-2200-B,289
+Third-Party Warehouse - Midwest DC,third_party_warehouse,EPS-2200-A,748
+Third-Party Warehouse - Midwest DC,third_party_warehouse,EPS-2200-B,261
+Northbridge OEM Receiving Dock,oem,EPS-2200-A,309
+Northbridge OEM Receiving Dock,oem,EPS-2200-B,258
