@@ -165,6 +165,9 @@ AGENT_ACTION_FOR_TYPE = {
 # the underlying hold has actually been executed.
 RELEASABLE_ACTION_TYPES = {"inventory_hold"}
 
+# Only these statuses may receive an approve/reject decision.
+APPROVABLE_STATUSES = {"awaiting_approval", "unavailable"}
+
 
 @app.post("/approve_action", dependencies=[Depends(verify_api_key)])
 def approve_action(req: ApproveActionRequest):
@@ -175,6 +178,16 @@ def approve_action(req: ApproveActionRequest):
     action = next((a for a in bundle["proposed_actions"] if a["ref_id"] == req.ref_id), None)
     if action is None:
         raise HTTPException(status_code=404, detail=f"Unknown action ref_id {req.ref_id}")
+
+    # Server-side state machine: the UI only offers buttons on pending actions,
+    # but the API must enforce it too. "unavailable" stays retryable because the
+    # downstream agent never confirmed execution.
+    if action["status"] not in APPROVABLE_STATUSES:
+        raise HTTPException(
+            status_code=409,
+            detail=f"Action {req.ref_id} is already '{action['status']}'; only actions in "
+                   f"{sorted(APPROVABLE_STATUSES)} can be approved or rejected.",
+        )
 
     correlation_id = bundle["correlation_id"]
 
